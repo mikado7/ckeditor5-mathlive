@@ -1,0 +1,358 @@
+
+.ck-mathlive-panelhook {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 999;
+}
+
+.ck-mathlive-panelhook ~ #mathlive-suggestion-popover {
+	z-index: 1000;
+}
+
+.ck-math-field {
+	position: relative;
+	display: inline-block;
+}
+
+.ck-math-field::after {
+	content: '';
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+/* stylelint-disable-next-line selector-type-no-unknown */
+.ck-math-field math-field {
+	display: inline-block;
+	padding: 0;
+	border: none;
+	color: inherit;
+	background: inherit;
+}
+
+/* Hide the virtual keyboard toggle */
+.ck-mathlive-panel math-field::part(virtual-keyboard-toggle) {
+	display: none;
+}
+
+/* Hide the menu toggle */
+/* .ck-mathlive-panel math-field::part(menu-toggle) {
+	display: none;
+} */
+
+.ck-mathlive-panel {
+	position: fixed;
+	bottom: 16px;
+	right: 16px;
+	width: 540px;
+	height: fit-content;
+	background-color: #f5f5f5;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+}
+
+.ck-mathlive-panel-header {
+	height: 32px;
+	display: flex;
+	gap: 16px;
+	align-items: center;
+	background-color: #a0a9b8;
+	border: 1px solid transparent;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+.ck-mathlive-panel-header-label {
+	padding-left: 8px;
+	flex: 1;
+	height: 100%;
+	color: #ffffff;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.ck-mathlive-panel-handle {
+	cursor: default;
+}
+
+.ck-mathlive-panel-header-actions {
+	padding-right: 4px;
+	display: flex;
+	align-items: center;
+}
+
+.ck-mathlive-panel-header-close {
+	position: relative;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+.ck-mathlive-panel-header-close::before,
+.ck-mathlive-panel-header-close::after {
+	position: absolute;
+	content: '';
+	height: 18px;
+	width: 2px;
+	background-color: #ffffff;
+}
+.ck-mathlive-panel-header-close::before {
+  transform: rotate(45deg);
+}
+.ck-mathlive-panel-header-close::after {
+  transform: rotate(-45deg);
+}
+
+
+.ck-mathlive-panel-content {
+	border-top: none;
+	padding: 8px;
+}
+
+.ck-mathlive-panel-formula {
+	background-color: #cacfd747;
+	border-radius: 4px;
+	padding: 0 6px 8px 6px;
+}
+
+.ck-mathlive-panel-input {
+	margin-top: 6px;
+	position: relative;
+	width: 100%;
+}
+
+.ck-mathlive-panel-input math-field {
+	width: calc(100% - 10px);
+	min-height: 80px;
+}
+
+.ck-mathlive-panel-submit {
+	padding-top: 6px;
+	display: flex;
+	gap: 16px;
+}
+
+.ck-mathlive-panel-submit button {
+	height: 28px;
+	padding: 0 24px;
+	display: flex;
+	align-items: center;
+	background-color: #a0a9b8;
+	color: rgb(255, 255, 255);
+    border: none;
+    font-size: 14px;
+    border-radius: 4px;
+	cursor: pointer;
+}
+
+.ck-mathlive-panel-submit button:hover {
+	background-color: #7d8795;
+}
+
+.ck-mathlive-formula {
+	width: 100%;
+}
+
+.ck-mathlive-formula-toolbar {
+	display: flex;
+	padding: 6px 0;
+	gap: 8px;
+}
+
+.ck-mathlive-formula-tab {
+	position: relative;
+	padding: 2px 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	border-bottom: 2px solid transparent;
+	color: #2c2e2f;
+}
+
+.ck-mathlive-formula-tab::after {
+	content: '';
+	position: absolute;
+	z-index: 9;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.ck-mathlive-formula-tab:hover {
+	color: #0c75d8;
+}
+
+.ck-mathlive-formula-tab.active {
+	color: #0c75d8;
+	border-color: #0c75d8;
+}
+
+.ck-mathlive-formula-tab.SUPAndSUB-fraction-radical {
+	font-size: 12px;
+}
+.ck-mathlive-formula-tab.SUPAndSUB-fraction-radical .ck-mathlive-latex-markup:nth-child(1) {
+	font-size: 15px;
+}
+
+
+.ck-mathlive-formula-tab.integral-largeOperator {
+	font-size: 9px;
+}
+
+.ck-mathlive-formula-tab.bracket {
+	font-size: 15px;
+}
+
+.ck-mathlive-formula-tex.bracket[equation="\\begin{cases}#0\\\\#0\\\\#0\\end{cases}"] {
+	font-size: 8px;
+}
+
+.ck-mathlive-formula-tab.function-limitAndlogarithm {
+
+	font-size: 14px;
+}
+
+.ck-mathlive-formula-tab.matrix {
+	font-size: 9px;
+}
+
+.ck-mathlive-formula-tab.labelSymbol-operator {
+	font-size: 18px;
+}
+
+.ck-mathlive-formula-tab.specificSymbol {
+	font-size: 17px;
+}
+
+.ck-mathlive-formula-tab.chemistry {
+	font-size: 14px;
+}
+
+.ck-mathlive-formula-content {
+	height: 146px;
+	padding-top: 4px;
+	padding-bottom: 2px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	overflow-y: auto;
+}
+
+.ck-mathlive-formula-row {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.ck-mathlive-formula-tex {
+	position: relative;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+	background-color: #ffffff;
+	padding: 0 6px;
+	height: 38px;
+	font-size: 14px;
+	border-radius: 4px;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.ck-mathlive-formula-tex::after {
+	content: '';
+	position: absolute;
+	z-index: 9;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.ck-mathlive-formula-tex:hover {
+	background-color: #f5f5f7;
+}
+
+.ck-mathlive-formula-tex:active {
+	background-color: #0c75d8;
+	color: #ffffff;
+}
+
+
+.ck-mathlive-formula-tex.integral-largeOperator {
+	font-size: 9px;
+}
+
+.ck-mathlive-formula-tex.integral-largeOperator[equation^="\\oiint"],
+.ck-mathlive-formula-tex.integral-largeOperator[equation^="\\oiiint"] {
+	font-size: 12px;
+}
+
+.ck-mathlive-formula-tex.specificSymbol {
+	height: 30px;
+    width: 21.2px;
+}
+
+
+.ck-mathlive-formula-tex.matrix {
+	font-size: 10px;
+}
+.ck-mathlive-formula-tex.matrix[equation$="dots"] {
+	font-size: 14px;
+}
+
+.ck-mathlive-formula-content
+.ck-mathlive-formula-row:nth-child(1)
+.ck-mathlive-formula-tex.labelSymbol-operator:nth-child(n+1):nth-child(-n+12) .ck-mathlive-latex-markup {
+	position: relative;
+	z-index: 1;
+	font-size: 16px;
+}
+.ck-mathlive-formula-content
+.ck-mathlive-formula-row:nth-child(1)
+.ck-mathlive-formula-tex.labelSymbol-operator:nth-child(n+1):nth-child(-n+12) .ck-mathlive-latex-markup::after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	top: 6px;
+    left: 2px;
+    right: 2px;
+    bottom: 6px;
+	background-color: hsl(212,70%,85%);
+}
+.ck-mathlive-formula-tex.labelSymbol-operator[equation='\\widetilde{#0}'] .ck-mathlive-latex-markup::after {
+	top: 10px !important;
+}
+
+.ck-mathlive-formula-content
+.ck-mathlive-formula-row:nth-child(2)
+.ck-mathlive-formula-tex.labelSymbol-operator {
+	font-size: 16px;
+}
+
+
+.ck-mathlive-formula-tex.chemistry:nth-child(1) .ck-mathlive-latex-markup::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 13px;
+    left: 11px;
+    right: 11px;
+    bottom: 12px;
+    background-color: hsl(212, 70%, 85%);
+}
+
+.ck-mathlive-formula-tex.chemistry:nth-child(1) {
+	position: relative;
+	z-index: 1;
+}
+
+/*# sourceMappingURL=index.css.map */

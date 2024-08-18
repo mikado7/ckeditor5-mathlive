@@ -1,0 +1,1 @@
+export default {"zh":{"dictionary":{"Insert math":"插入公式","Insert":"插入","Cancel":"取消"},getPluralForm(n){return 0;}}}
