@@ -1,11 +1,11 @@
 import '../theme/mathlive.css';
 import mathliveIcon from '../theme/icons/mathlive.svg';
-import MathliveEditing from './mathliveediting';
-import { ClickObserver } from 'ckeditor5/src/engine';
-import { ButtonView } from 'ckeditor5/src/ui';
-import { Plugin } from 'ckeditor5/src/core';
-import { CKEditorError, global } from 'ckeditor5/src/utils';
-import { MathlivePanelCommand } from './mathlivecommand';
+import MathliveEditing from './mathliveediting.js';
+import { ClickObserver } from 'ckeditor5';
+import { ButtonView } from 'ckeditor5';
+import { Plugin } from 'ckeditor5';
+import { CKEditorError, global } from 'ckeditor5';
+import { MathlivePanelCommand } from './mathlivecommand.js';
 
 const mathKeystroke = 'Ctrl+M';
 const pluginScopeName = '_ckeditor5Mathlive';

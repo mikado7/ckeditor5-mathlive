@@ -1,4 +1,4 @@
-import './augmentation';
+import './augmentation.js';
 
-export { default as Mathlive } from './mathlive';
-export { default as MathlivePanelview } from './components/panelview';
+export { default as Mathlive } from './mathlive.js';
+export { default as MathlivePanelview } from './components/panelview/index.js';

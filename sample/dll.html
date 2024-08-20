@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
     <link rel="icon" type="image/png" href="https://ckeditor.com/docs/ckeditor5/latest/assets/img/favicons/32x32.png" sizes="32x32">
-	<link rel="stylesheet" href="https://unpkg.com/mathlive/dist/mathlive-static.css" />
-    <script defer src="https://unpkg.com/mathlive"></script>
     <meta charset="utf-8">
     <title>CKEditor 5 – DLL Sample</title>
     <style>
@@ -30,7 +28,7 @@
     <h3>Uncaught TypeError</h3>
     <p>If the editor is not initialized correctly and the browser console displays an error such as the following:</p>
     <pre><code>Uncaught TypeError: Cannot read properties of undefined (reading 'Mathlive') at dll.html:85</code></pre>
-    <p>it means that the DLL build of the <code>@yayure/ckeditor5-mathlive</code> package has not been created.</p>
+    <p>it means that the DLL build of the <code>@mikado7/ckeditor5-mathlive</code> package has not been created.</p>
     <p>Please call the <code>npm run dll:build</code> command in the CLI, and after it finishes, refresh the page.</p>
 
     <h3>Anatomy of the DLL build</h3>
@@ -89,9 +87,8 @@
 <script src="../node_modules/@ckeditor/ckeditor5-media-embed/build/media-embed.js"></script>
 <script src="../node_modules/@ckeditor/ckeditor5-list/build/list.js"></script>
 <script src="../node_modules/@ckeditor/ckeditor5-table/build/table.js"></script>
-<script src="../node_modules/@ckeditor/ckeditor5-alignment/build/alignment.js"></script>
 
-<!-- The "@yayure/ckeditor5-mathlive" package DLL build is served from the `build/` directory -->
+<!-- The "@mikado7/ckeditor5-mathlive" package DLL build is served from the `build/` directory -->
 <script src="../build/mathlive.js"></script>
 
 <script>
@@ -121,11 +118,10 @@
 				CKEditor5.table.TableToolbar,
 				CKEditor5.codeBlock.CodeBlock,
 				CKEditor5.basicStyles.Code,
-				CKEditor5.upload.Base64UploadAdapter,
-				CKEditor5.alignment.Alignment,
+				CKEditor5.upload.Base64UploadAdapter
 			],
 			toolbar: [
-				'mathlive',
+				'mathliveButton',
 				'|',
 				'heading',
 				'|',
@@ -133,9 +129,6 @@
 				'italic',
 				'link',
 				'code',
-				'|',
-				'alignment',
-				'|',
 				'bulletedList',
 				'numberedList',
 				'|',
@@ -151,18 +144,6 @@
 				'undo',
 				'redo'
 			],
-			mathlive: {
-				renderMathPanel: function( element ) {
-					let panelView = new CKEditor5[ 'mathlive' ].MathlivePanelview();
-
-					panelView.mount( element );
-
-					return () => {
-						panelView?.destroy();
-						panelView = null;
-					};
-				}
-			},
 			image: {
 				toolbar: [
 					'imageStyle:inline',

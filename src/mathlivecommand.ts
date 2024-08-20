@@ -1,6 +1,6 @@
-import { Command, type Editor } from 'ckeditor5/src/core';
-import { getSelectedMathModelWidget, inesertEquationModal } from './utils';
-import { global } from 'ckeditor5/src/utils';
+import { Command, type Editor } from 'ckeditor5';
+import { getSelectedMathModelWidget, inesertEquationModal } from './utils.js';
+import { global } from 'ckeditor5';
 
 export default class MathliveCommand extends Command {
 	public override value: string | undefined = undefined;

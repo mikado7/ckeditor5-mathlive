@@ -3,7 +3,7 @@
  */
 import type { MathfieldElement as MathfieldElementType } from 'mathlive';
 import '../../../theme/panelview.css';
-import latexIconMarkupMap from './latexmarkupmap';
+import latexIconMarkupMap from './latexmarkupmap.js';
 
 interface PanelCommand {
 	editor: {

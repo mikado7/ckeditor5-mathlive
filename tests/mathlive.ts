@@ -1,9 +1,9 @@
 import { expect } from 'chai';
-import { Essentials } from '@ckeditor/ckeditor5-essentials';
-import { Paragraph } from '@ckeditor/ckeditor5-paragraph';
-import { Heading } from '@ckeditor/ckeditor5-heading';
-import { ClassicEditor } from '@ckeditor/ckeditor5-editor-classic';
-import Mathlive from '../src/mathlive';
+import { Essentials } from 'ckeditor5';
+import { Paragraph } from 'ckeditor5';
+import { Heading } from 'ckeditor5';
+import { ClassicEditor } from 'ckeditor5';
+import Mathlive from '../src/mathlive.js';
 
 describe( 'Mathlive', () => {
 	it( 'should be named', () => {

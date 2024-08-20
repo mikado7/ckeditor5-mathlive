@@ -56,7 +56,7 @@ function dist( path ) {
 		sourceMap: true,
 		minify: true,
 		browser: true,
-		name: 'ckeditor5-mathlive2',
+		name: 'ckeditor5-mathlive',
 		external: [
 			'ckeditor5',
 			'ckeditor5-premium-features'

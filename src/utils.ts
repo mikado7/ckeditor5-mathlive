@@ -1,8 +1,8 @@
-import type { Editor } from 'ckeditor5/src/core';
+import type { Editor } from 'ckeditor5';
 import type {
 	Element as CKElement,
 	DocumentSelection
-} from 'ckeditor5/src/engine';
+} from 'ckeditor5';
 
 export function inesertEquationModal(
 	editor: Editor,

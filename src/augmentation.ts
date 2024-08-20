@@ -1,5 +1,5 @@
-import type { Mathlive } from './index';
-import type { DowncastWriter } from 'ckeditor5/src/engine';
+import type { Mathlive } from './index.js';
+import type { DowncastWriter } from 'ckeditor5';
 
 type ElementAttributes = Parameters<DowncastWriter['createContainerElement']>[1];
 

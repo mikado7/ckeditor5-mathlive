@@ -1,5 +1,3 @@
 {
-	"Insert math": "Toolbar button tooltip for the insert math feature.",
-	"Insert": "Label for the Panelview Insert button.",
-	"Cancel": "Label for the Panelview Cancel button."
+  "Mathlive": "Content for a tooltip is displayed when a user hovers the CKEditor 5 icon."
 }

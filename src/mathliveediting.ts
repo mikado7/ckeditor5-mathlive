@@ -1,12 +1,12 @@
-import MathliveCommand from './mathlivecommand';
-import { type Editor, Plugin } from 'ckeditor5/src/core';
+import MathliveCommand from './mathlivecommand.js';
+import { type Editor, Plugin } from 'ckeditor5';
 import {
 	toWidget,
 	Widget,
 	viewToModelPositionOutsideModelElement
-} from 'ckeditor5/src/widget';
-import type { DowncastWriter, Element, ViewElement, Writer } from 'ckeditor5/src/engine';
-import { CKEditorError } from 'ckeditor5/src/utils';
+} from 'ckeditor5';
+import type { DowncastWriter, Element, ViewElement, Writer } from 'ckeditor5';
+import { CKEditorError } from 'ckeditor5';
 
 export default class MathliveEditing extends Plugin {
 	public static get requires() {
