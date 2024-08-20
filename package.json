@@ -53,8 +53,7 @@
     "typescript": "5.0.4"
   },
   "peerDependencies": {
-    "ckeditor5": ">=42.0.0 || ^0.0.0-nightly",
-    "mathlive": "^0.101.0"
+    "ckeditor5": ">=42.0.0 || ^0.0.0-nightly"
   },
   "scripts": {
     "build:dist": "node ./scripts/build-dist.mjs",
