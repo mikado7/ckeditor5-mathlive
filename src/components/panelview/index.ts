@@ -49,7 +49,6 @@ export default class PanelView {
 		mathField?.addEventListener( 'input', e => {
 			this.equation = ( e.target as { value?: string } )?.value || '';
 		} );
-		const mfe = new MathfieldElement();
 		mathField.setValue( this.equation );
 		setTimeout( () => {
 			mathField.focus();
