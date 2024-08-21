@@ -6,7 +6,6 @@
   },
   "exclude": [
     "./tests/",
-	"./src",
     "./sample/"
   ]
 }

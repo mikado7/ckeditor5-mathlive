@@ -34,6 +34,7 @@ import CKEditorInspector from '@ckeditor/ckeditor5-inspector';
 import Mathlive from '../src/mathlive.js';
 
 import 'ckeditor5/ckeditor5.css';
+import { MathlivePanelview } from '../src/index.js';
 
 ClassicEditor
 	.create( document.getElementById( 'editor' )!, {
@@ -65,7 +66,7 @@ ClassicEditor
 			'undo',
 			'redo',
 			'|',
-			'mathliveButton',
+			'mathlive',
 			'|',
 			'heading',
 			'|',
@@ -85,6 +86,24 @@ ClassicEditor
 			'mediaEmbed',
 			'codeBlock'
 		],
+		mathlive: {
+			renderMathPanel: element => {
+				let panelView: MathlivePanelview | null = new MathlivePanelview();
+
+				panelView.mount( element );
+
+				return () => {
+					panelView?.destroy();
+					panelView = null;
+				};
+			},
+			output: {
+				type: 'span',
+				attributes: {
+					class: 'math-tex'
+				}
+			}
+		},
 		image: {
 			toolbar: [
 				'imageStyle:inline',

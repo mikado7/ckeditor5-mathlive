@@ -1,7 +1,7 @@
 /**
  * Based on mathlive,see more: https://cortexjs.io/mathlive/
  */
-import type { MathfieldElement as MathfieldElementType } from 'mathlive';
+import { MathfieldElement } from 'mathlive';
 import '../../../theme/panelview.css';
 import latexIconMarkupMap from './latexmarkupmap.js';
 
@@ -44,11 +44,12 @@ export default class PanelView {
 		registerDragElement( container, handle );
 
 		// Add interaction to the math-field element.
-		const mathField = container.querySelector( '.ck-mathlive-panel-input math-field' ) as MathfieldElementType;
+		const mathField = container.querySelector( '.ck-mathlive-panel-input math-field' ) as MathfieldElement;
 
 		mathField?.addEventListener( 'input', e => {
 			this.equation = ( e.target as { value?: string } )?.value || '';
 		} );
+		const mfe = new MathfieldElement();
 		mathField.setValue( this.equation );
 		setTimeout( () => {
 			mathField.focus();
@@ -159,9 +160,9 @@ export class FormulaView {
 		onMathTexClick?: (
 			equation: string,
 			interceptor?: {
-				before?: ( mathField: MathfieldElementType ) => Promise<void>;
-				after?: ( mathField: MathfieldElementType ) => Promise<void>;
-				customInsert?: ( mathField: MathfieldElementType ) => void;
+				before?: ( mathField: MathfieldElement ) => Promise<void>;
+				after?: ( mathField: MathfieldElement ) => Promise<void>;
+				customInsert?: ( mathField: MathfieldElement ) => void;
 			}
 		) => void;
 		onFormulaTabClick?: ( key: string ) => void;
@@ -316,14 +317,14 @@ export class FormulaView {
 
 	public insertInterceptors: Array<{
 		equations: Array<string>;
-		before?: ( mathField: MathfieldElementType ) => Promise<void>;
-		after?: ( mathField: MathfieldElementType ) => Promise<void>;
-		customInsert?: ( mathField: MathfieldElementType ) => void;
+		before?: ( mathField: MathfieldElement ) => Promise<void>;
+		after?: ( mathField: MathfieldElement ) => Promise<void>;
+		customInsert?: ( mathField: MathfieldElement ) => void;
 	}> = [
 		{
 			equations: [ '\\dot{#0}', '\\ddot{#0}', '\\mathring{#0}', '\\hat{#0}', '\\check{#0}', '\\acute{#0}', '\\grave{#0}',
 				'\\breve{#0}', '\\widetilde{#0}', '\\bar{#0}', '\\bar{\\bar{#0}}', '\\vec{#0}' ],
-			before: ( mathField: MathfieldElementType ): Promise<void> => {
+			before: ( mathField: MathfieldElement ): Promise<void> => {
 				if ( mathField.selectionIsCollapsed ) {
 					mathField.executeCommand( 'extendSelectionBackward' );
 
@@ -341,7 +342,7 @@ export class FormulaView {
 		},
 		{
 			equations: [ '\\ce{#0}' ],
-			before: ( mathField: MathfieldElementType ): Promise<void> => {
+			before: ( mathField: MathfieldElement ): Promise<void> => {
 				if ( mathField.selectionIsCollapsed ) {
 					mathField.executeCommand( 'extendToGroupStart' );
 

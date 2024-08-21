@@ -30,7 +30,8 @@
   },
   "files": [
     "dist",
-    "ckeditor5-metadata.json"
+    "ckeditor5-metadata.json",
+    "theme"
   ],
   "devDependencies": {
     "@ckeditor/ckeditor5-dev-build-tools": "42.0.1",
